@@ -1,0 +1,103 @@
+<div class="_dashboard-items">
+    <div class="_left-part">
+        <div class="_watch-image">
+            <img alt="image" class="i-amphtml-fill-content i-amphtml-replaced-content" decoding="async"
+                src="https://tpc.googlesyndication.com/simgad/4594654125074631539">
+
+
+
+        </div>
+
+    </div>
+    <div class="_right-part">
+        <div class="_discovery-section">
+            <div class="_heading_text">
+                Discover
+
+            </div>
+            <div class="row">
+                <img class="__poster" src="https://in.bmscdn.com/discovery_card/worskshops_04-06-2020-04-05-31-634.png"
+                    data-src="https://in.bmscdn.com/discovery_card/worskshops_04-06-2020-04-05-31-634.png"
+                    data-mobile="https://in.bmscdn.com/discovery_card/worskshops_04-06-2020-04-05-31-634.png" alt=""
+                    data-error="//in.bmscdn.com/events/mobile/vertical-noimg-square-card.png">
+                <img class="__poster" src="https://in.bmscdn.com/discovery_card/comedy@1x_05-02-2020-12-50-21-282.png"
+                    data-src="https://in.bmscdn.com/discovery_card/comedy@1x_05-02-2020-12-50-21-282.png"
+                    data-mobile="https://in.bmscdn.com/discovery_card/comedy@1x_05-02-2020-12-50-21-282.png" alt=""
+                    data-error="//in.bmscdn.com/events/mobile/vertical-noimg-square-card.png">
+                <img class="__posterd" src="https://in.bmscdn.com/discovery_card/music@1x_06-02-2020-11-59-03-737.png"
+                    data-src="https://in.bmscdn.com/discovery_card/music@1x_06-02-2020-11-59-03-737.png"
+                    data-mobile="https://in.bmscdn.com/discovery_card/music@1x_06-02-2020-11-59-03-737.png" alt=""
+                    data-error="//in.bmscdn.com/events/mobile/vertical-noimg-square-card.png">
+
+            </div>
+
+        </div>
+        <div class="_event-section" *ngFor="let type of types">
+            <div class="_heading_text">
+                {{type.name}}
+    
+            </div>
+            <div class="_event-cards" >
+                <div class="row">
+                    <div class="_eventCards" *ngFor="let event of type.cards">
+                        <div class="event-card">
+                            <mat-card class="mat-elevation-z0" (click)="navigate(event)">
+    
+                                <img mat-card-image class="event-image" src="{{event.image}}" alt="Photo of a Movie">
+    
+                                <mat-card-footer>
+                                    <div class="card-info">
+                                        <div class="left-card">
+                                            <span class="_date">
+                                                {{event.date}}
+                                            </span>
+                                            <span class="_month">
+                                                {{event.month}}
+                                            </span>
+    
+    
+    
+                                        </div>
+                                        <div class="right-card">
+                                            <div class="card-info">
+                                                <span class="_eventTitle">
+                                                    {{event.title}}
+                                                </span>
+                                                <div class="_streaming">
+                                                    Streaming on {{event.streamingOn}}
+                                                </div>
+                                                <span class="_streaming">
+                                                    {{event.type}}
+                                                </span>
+                                                <span class="_streaming">
+                                                    Rs. {{event.price}} Onwards
+                                                </span>
+    
+                                            </div>
+    
+                                        </div>
+    
+    
+    
+                                    </div>
+                                </mat-card-footer>
+    
+    
+    
+                            </mat-card>
+                        </div>
+                    </div>
+    
+    
+                </div>
+    
+            </div>
+    
+    
+        </div>
+    
+
+    </div>
+
+   
+</div>

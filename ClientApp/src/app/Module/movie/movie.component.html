@@ -1,0 +1,30 @@
+<app-scroll type="Movies"></app-scroll>
+<div class="inner-header">
+    <div class="row">
+        <div class="header-title">
+                Movies
+        </div>
+        <div class="row">
+            <ul class="nav d-md-flex">
+                <li>
+                    <a href="#" class="active" >
+                        <label>Now Showing</label> 
+                    </a>
+                </li>
+                <li>
+                    <a href="#" routerLink='commingsoon' routerLinkActive="active-link" routerLinkActiveOptions="{exact:true}">
+                       <label> Coming Soon</label>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" routerLink="exclusive" routerLinkActive="active-link" routerLinkActiveOptions="{exact:true}">
+                      <label>Exclusive</label>  
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="movies-list">
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,159 @@
+<div class="_eventCard">
+    <div >
+        <img class="_innerImage" src="{{event.image}}" alt="">
+        <img class="_image" src="{{event.image}}" alt="">
+    </div>
+    <div class="_eventInfoHeader">
+         <div class="_leftHeader">
+             <div class="_title">
+                {{event.title}}
+             </div>
+             <div class="_info">
+                 {{event.type}} | {{event.language}} | {{duration}}
+             </div>
+         </div>
+         <div class="_rightHeader">
+             <button class="_register" (click)="openDialog()">
+                 Register
+             </button>
+         </div>
+         <mat-divider class="_diver"></mat-divider>
+    <div class="_info">
+        {{streamOn}}
+        <span class="_streamInfo">
+            Watch On {{event.streamingOn}} | &#x20b9; {{event.price }}
+        </span>
+    </div>
+    </div>
+</div>
+<div class="_eventDetails" >
+    <div class="_leftpart">
+        <div *ngIf="organizers!=null" class="_organizers">
+          <span class="_artistText">Artist</span>
+           <div class="_organizer" *ngFor="let organizer of organizers" >
+            <div class="_org-image">
+                <img src="{{organizer.imageUrl}}" alt="">
+            </div>
+            <div class="_org-name">
+                {{organizer.name}}
+            </div>
+           </div>
+       </div>
+       <div class="_shareAction">
+           <div class="_heading">Share this event
+           </div>
+           <div class="social-icon">
+            <a href="#" class="fa fa-facebook" id="facebook-icon"></a>
+            <a href="#" class="fa fa-twitter" id="twitter-icon"></a>
+          </div>
+       </div>
+    </div>
+    <div class="_rightPart">
+        <div class="_streamCard">
+            <span class="_onlineTag">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 27" fill="none" id="live-stream"><path d="M68.9149 26.9246H5.97627C2.71488 26.9246 0.0693359 24.277 0.0693359 21.0131V6.05896C0.0693359 2.79505 2.71488 0.147461 5.97627 0.147461H68.9149C72.1763 0.147461 74.8218 2.79505 74.8218 6.05896V21.0131C74.8218 24.279 72.1782 26.9246 68.9149 26.9246Z" fill="#E7364D"></path><path d="M12.2614 7.12207C15.6495 7.12207 17.5208 8.95914 17.5208 11.9218V15.5266C17.5208 18.4893 15.6495 20.3263 12.2614 20.3263 8.89106 20.3263 7.00195 18.4893 7.00195 15.5266V11.9218C6.99997 8.95914 8.89106 7.12207 12.2614 7.12207zM12.2792 9.77957C10.7643 9.77957 9.9069 10.4752 9.9069 11.8683V15.5801C9.9069 16.9713 10.7623 17.6688 12.2792 17.6688 13.7762 17.6688 14.6515 16.9733 14.6515 15.5801V11.8683C14.6495 10.4771 13.7762 9.77957 12.2792 9.77957zM29.6463 8.12188V19.3286C29.6463 19.8815 29.468 20.0598 28.9156 20.0598H27.4898C27.1156 20.0598 26.9373 19.9707 26.7769 19.721L23.3175 14.404C22.4621 13.0841 21.9274 11.5483 21.7849 11.0667H21.6423C21.767 11.584 22.1413 13.1713 22.1413 15.0639V19.3286C22.1413 19.8815 21.9631 20.0598 21.4284 20.0598H20.1096C19.5571 20.0598 19.3789 19.8815 19.3789 19.3286V8.12188C19.3789 7.56898 19.5571 7.39062 20.1096 7.39062H21.571C21.9631 7.39062 22.1235 7.49764 22.2839 7.7295L25.7967 13.1357C26.7057 14.5268 27.1512 15.92 27.3116 16.3302H27.4542C27.276 15.7773 26.8839 14.295 26.8839 12.3866V8.12188C26.8839 7.56898 27.0621 7.39062 27.5967 7.39062H28.9156C29.468 7.39062 29.6463 7.56898 29.6463 8.12188zM34.729 8.12289V17.4014H39.3468C39.8814 17.4014 40.0596 17.5975 40.0596 18.1326V19.3276C40.0596 19.8805 39.8814 20.0589 39.3468 20.0589H32.5705C32.0181 20.0589 31.8398 19.8805 31.8398 19.3276V8.12091C31.8398 7.568 32.0181 7.38965 32.5705 7.38965H34.0141C34.5507 7.39163 34.729 7.56999 34.729 8.12289zM42.0762 7.39062H43.5375C44.0722 7.39062 44.2504 7.56898 44.2504 8.10405V19.3464C44.2504 19.8815 44.0722 20.0598 43.5375 20.0598H42.0762C41.5415 20.0598 41.3633 19.8815 41.3633 19.3464V8.10405C41.3633 7.56898 41.5415 7.39062 42.0762 7.39062zM56.7126 8.12188V19.3286C56.7126 19.8815 56.5344 20.0598 55.9819 20.0598H54.5562C54.1819 20.0598 54.0037 19.9707 53.8433 19.721L50.3839 14.404C49.5285 13.0841 48.9938 11.5483 48.8513 11.0667H48.7087C48.8334 11.584 49.2077 13.1713 49.2077 15.0639V19.3286C49.2077 19.8815 49.0295 20.0598 48.4948 20.0598H47.176C46.6235 20.0598 46.4453 19.8815 46.4453 19.3286V8.12188C46.4453 7.56898 46.6235 7.39062 47.176 7.39062H48.6374C49.0295 7.39062 49.1899 7.49764 49.3503 7.7295L52.8631 13.1357C53.772 14.5268 54.2176 15.92 54.378 16.3302H54.5206C54.3423 15.7773 53.9503 14.295 53.9503 12.3866V8.12188C53.9503 7.56898 54.1285 7.39062 54.6631 7.39062H55.9819C56.5344 7.39062 56.7126 7.56898 56.7126 8.12188zM67.536 8.12289V9.31787C67.536 9.85294 67.3577 10.0313 66.8053 10.0313H61.7954V12.3341H65.9142C66.4488 12.3341 66.6449 12.5124 66.6449 13.0475V14.2425C66.6449 14.7954 66.4488 14.9737 65.9142 14.9737H61.7954V17.4014H66.9835C67.5181 17.4014 67.6964 17.5975 67.6964 18.1326V19.3276C67.6964 19.8805 67.5181 20.0589 66.9835 20.0589H59.6369C59.0845 20.0589 58.9062 19.8805 58.9062 19.3276V8.12091C58.9062 7.568 59.0845 7.38965 59.6369 7.38965H66.8053C67.3577 7.39163 67.536 7.56999 67.536 8.12289z" fill="#fff"></path><path d="M78.6652 14.4634C79.1757 12.3428 77.8717 10.2095 75.7527 9.69864C73.6337 9.18777 71.502 10.4928 70.9915 12.6135C70.481 14.7341 71.785 16.8674 73.904 17.3782C76.023 17.8891 78.1547 16.5841 78.6652 14.4634Z" fill="#fff" stroke="#E7364D" stroke-width=".6" stroke-miterlimit="10"></path><path d="M77.3979 14.1574C77.7397 12.7369 76.8663 11.308 75.4469 10.9658C74.0274 10.6236 72.5997 11.4977 72.2577 12.9182C71.9158 14.3388 72.7892 15.7677 74.2086 16.1099C75.628 16.4521 77.056 15.5779 77.3979 14.1574Z" fill="#E7364D"></path><path d="M76.1794 13.8687C76.3617 13.1111 75.8958 12.349 75.1388 12.1665C74.3817 11.984 73.6204 12.4502 73.438 13.2078C73.2556 13.9654 73.7213 14.7275 74.4784 14.9101C75.2354 15.0926 75.997 14.6264 76.1794 13.8687Z" fill="#fff"></path></svg>
+            </span>
+            <span class="_onlineText">
+                <span class="_heading">Introducing Online Streaming</span>
+                Experience the vibe at the comfort of your home.
+            </span>
+        </div>
+        <div class="_eventResponseCard">
+            <span class="_responsecardHeading">
+                Click on Interested to stay updated about this event.
+            </span>
+            <div class="_responseContent">
+                <div class="_leftpart">
+                    <div class="_response">
+                        <i class="fa fa-thumbs-up" aria-hidden="true" id="_like_icon"></i>
+                     <span class="_interestedCount">6</span>
+                    </div>
+                     <div class="_iterested_text">
+                        People have shown interest recently
+                     </div>
+                </div>
+                <div class="_rightpart">
+                    <button class="_interested" (click)="openDialog()">
+                        Interested?
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="_moreInfo">
+            <div class="_note">
+                <div class="_note_heading">
+                    Note
+                </div>
+                <span >
+                    <ul class="_notepoints">
+                        <li>
+                            Upon purchase of a ticket, A customer will get a registration link for the event.&nbsp;
+                        </li>
+                        <li>
+                            The registration link will be provided in confirmation mail and sms.
+                        </li>
+                        <li>
+                            Customers will have to complete the registration to get a streaming link
+                        </li>
+                        <li>Please refer to the tab below synopsis - Important information for streaming the show.</li>
+                    </ul>
+                </span>
+            </div>
+            <div class="_about">
+                <div class="_heading">
+                    About
+                </div>
+                <p>{{event.about}}
+                    </p>
+            </div>
+            <mat-divider class="_diver"></mat-divider>
+            <div class="_desclaimer">
+                <mat-expansion-panel class="mat-elevation-z0" (opened)="desclamerPanelState = true" 
+                (closed)="desclamerPanelState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Desclaimer
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ul class="_desclaimerContent">
+              <li>
+                The views expressed by the individual artists and performers ("Artist(s)"), either in course of their performance, or on their social media channels, or any third party channels and platforms, online or offline or otherwise (collectively, "Channels"), are solely their own and neither do they represent those of BookMyShow nor are they endorsed in any manner by BookMyShow, its associates and affiliates.&nbsp;
+              </li>
+              <li>
+                The views expressed by the individual artists and performers ("Artist(s)"), either in course of their performance, or on their social media channels, or any third party channels and platforms, online or offline or otherwise (collectively, "Channels"), are solely their own and neither do they represent those of BookMyShow nor are they endorsed in any manner by BookMyShow, its associates and affiliates.&nbsp;
+              </li>
+              <li>
+                The views expressed by the individual artists and performers ("Artist(s)"), either in course of their performance, or on their social media channels, or any third party channels and platforms, online or offline or otherwise (collectively, "Channels"), are solely their own and neither do they represent those of BookMyShow nor are they endorsed in any manner by BookMyShow, its associates and affiliates.&nbsp;
+              </li>
+              <li>
+                The views expressed by the individual artists and performers ("Artist(s)"), either in course of their performance, or on their social media channels, or any third party channels and platforms, online or offline or otherwise (collectively, "Channels"), are solely their own and neither do they represent those of BookMyShow nor are they endorsed in any manner by BookMyShow, its associates and affiliates.&nbsp;
+              </li>
+          </ul>
+        </mat-expansion-panel>
+        <mat-divider class="_diver"></mat-divider>
+            </div>
+            <mat-expansion-panel class="mat-elevation-z0" (opened)="desclamerPanelState = true" 
+            (closed)="desclamerPanelState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Terms & Conditions
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <ul class="_desclaimerContent">
+          <li>
+            The views expressed by the individual artists and performers ("Artist(s)"), either in course of their performance, or on their social media channels, or any third party channels and platforms, online or offline or otherwise (collectively, "Channels"), are solely their own and neither do they represent those of BookMyShow nor are they endorsed in any manner by BookMyShow, its associates and affiliates.&nbsp;
+          </li>
+          <li>
+            The views expressed by the individual artists and performers ("Artist(s)"), either in course of their performance, or on their social media channels, or any third party channels and platforms, online or offline or otherwise (collectively, "Channels"), are solely their own and neither do they represent those of BookMyShow nor are they endorsed in any manner by BookMyShow, its associates and affiliates.&nbsp;
+          </li>
+          <li>
+            The views expressed by the individual artists and performers ("Artist(s)"), either in course of their performance, or on their social media channels, or any third party channels and platforms, online or offline or otherwise (collectively, "Channels"), are solely their own and neither do they represent those of BookMyShow nor are they endorsed in any manner by BookMyShow, its associates and affiliates.&nbsp;
+          </li>
+          <li>
+            The views expressed by the individual artists and performers ("Artist(s)"), either in course of their performance, or on their social media channels, or any third party channels and platforms, online or offline or otherwise (collectively, "Channels"), are solely their own and neither do they represent those of BookMyShow nor are they endorsed in any manner by BookMyShow, its associates and affiliates.&nbsp;
+          </li>
+      </ul>
+    </mat-expansion-panel>
+        </div>
+    </div>
+</div>

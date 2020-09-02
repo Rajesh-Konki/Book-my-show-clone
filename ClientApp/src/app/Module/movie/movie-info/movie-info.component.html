@@ -1,0 +1,95 @@
+<div class="movie-top-info-block">
+    <div class="movie-image">
+        <div class="row">
+            <div>
+              <img src="{{movie.image}}" alt="" class="image">
+              <span class="_tag">
+                2D
+              </span>
+            </div>
+            <div class="movie-det">
+                <div class="__name">
+                  {{movie.title}}
+                </div>
+                <div class="__language">
+                    {{movie.language}}
+                  </div>
+                  <div class="__genre">
+                    {{movie.genre}}
+                  </div>
+                    <div class="__date">
+                        <i class="fa fa-calendar" aria-hidden="true"> </i>  {{movie.date|date: "mediumDate"}}
+                      </div>
+                      <div class="_spacer">
+                      </div>
+                      <div>
+                  </div>
+                 <div class="_responsebar">
+                  <div class="social_response">
+                    <div class="like_action">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 102 102" id="icon-like"><path d="M26.5 94.7H5.9a.9.9 0 0 1-.9-.9V46.9c0-.5.4-.9.9-.9h20.6c.5 0 .9.4.9.9v46.8c0 .6-.4 1-.9 1zm4.3-44s5.9-2.1 8.1-5.7c1.9-3.1 10.4-17.2 12.6-20.8.3-.6.5-1.2.5-1.9v-8.2c0-.2-1.4-8.6 5.3-9.4 7.5-.9 14.1 13.8 11.8 23.4L67 39.8h20.9c3.3 0 5.8 3 5.3 6.3l-7.3 41.4c-.5 2.5-2.7 4.4-5.3 4.4H42.7c-.6 0-1.1-.1-1.6-.4l-5.3-2.8c-.6-.3-1.2-.4-1.8-.4h-3.1V50.7z"></path></svg>
+                    </div>
+                </div>
+                    <div class="_response">
+                      <span class="_votes">
+                        {{movie.likesCount}}
+                      </span>
+                      <span class="_text">
+                        INTERESTED
+                      </span>
+                    </div>
+                 </div>
+                 <div class="tabs">
+                  <mat-tab-group >
+                    <mat-tab label="Summery" > 
+                      <div class="__summery">
+                        <div class="_heading">
+                          SYNOPSIS
+                        </div>
+                        <blockquote class="_synopsis">
+                          {{movie.synopsis}}
+                        </blockquote>
+                        <div class="_heading">
+                          CAST
+                        </div>
+                        <div class="_casting">
+                          <div class="_castinfo" *ngFor="let cast of movie.casting">
+                            <img src="{{cast.imageUrl}}"
+                             alt="image" class="cast_image">
+                             <div class="cast_name">
+                              {{cast.name}}
+                             </div>
+                             <span class="cast_role">
+                               {{cast.role}}
+                             </span>
+                          </div>
+                        </div>
+                        <div class="_heading">
+                          CREW
+                        </div>
+                        <div class="_crew">
+                          <div class="_castinfo" *ngFor="let artist of movie.crew">
+                            <img src="{{artist.imageUrl}}"
+                             alt="image" class="cast_image">
+                             <!-- <img *ngIf="{{artist.image==null}}" src="../../assets/images/profile.jfif"
+                             alt="image" class="cast_image"> -->
+                             <div class="cast_name">
+                              {{artist.name}}
+                             </div>
+                             <span class="cast_role">
+                               {{artist.role}}
+                             </span>
+                          </div>
+                        </div>
+                      </div>
+                    </mat-tab>
+                    <mat-tab label="User Reviews"> progress</mat-tab>
+                    <mat-tab label="Critic Reviews"> progress</mat-tab>
+                  </mat-tab-group>
+                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="top-header">
+    </div>
+</div>

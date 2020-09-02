@@ -1,0 +1,95 @@
+<div class="inner-header">
+    <div class="row">
+        <div class="header-title">
+                Sports
+        </div>
+        <div class="row">
+            <ul class="nav d-md-flex">
+                <li *ngFor="let _type of options">
+                    <a class="_type" (click)="filterByType(_type)" class="active" >
+                        <label >{{_type}}</label> 
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="_eventList">
+<div class="_filterSection">
+    <mat-expansion-panel class="mat-elevation-z0" (opened)="languageFilterPanelOpenState = true" 
+    (closed)="languageFilterPanelOpenState = false">
+<mat-expansion-panel-header>
+<mat-panel-title [style.color]="languageFilterPanelOpenState?'#0078ff':'black'">
+  Date
+</mat-panel-title>
+</mat-expansion-panel-header>
+<span class="filter-list-section">
+<ul id="filter-item">
+  <li *ngFor="let day of days ;let i=index ">
+    <mat-checkbox color="primary" [(ngModel)]="day.selected" [checked]="day.selected"
+      (change)="filterByDay(i)">
+      {{day.text}}
+    </mat-checkbox>
+  </li>
+</ul>
+</span>
+</mat-expansion-panel>
+<mat-expansion-panel class="mat-elevation-z0" (opened)="languageFilterPanelOpenState = true" 
+(closed)="languageFilterPanelOpenState = false">
+<mat-expansion-panel-header>
+<mat-panel-title [style.color]="languageFilterPanelOpenState?'#0078ff':'black'">
+ Price Range
+</mat-panel-title>
+</mat-expansion-panel-header>
+<span class="filter-list-section" >
+    <ul *ngFor="let range of price; let i=index">
+        <li class="_priceRange" (click)="filterByPriceRange(i)">
+            {{range}}
+        </li>
+    </ul>
+</span>
+</mat-expansion-panel>
+<button class="_browseVenue">
+    Browse by Venue
+</button>
+</div>
+<div class="_eventSection">
+    <div class="row">
+        <div class="_eventCards" *ngFor="let event of filteredSportCards">
+            <div class="event-card">
+            <mat-card  class="mat-elevation-z0" (click)="navigate(event)" >
+                    <img mat-card-image class="event-image" src="{{event.image}}" alt="Photo of a Movie">
+                <mat-card-footer>
+                  <div class="card-info">
+                    <div class="left-card">
+                      <span class="_date">
+                       {{event.date}}
+                      </span>
+                        <span class="_month">
+                        {{event.month}}
+                        </span>
+                    </div>
+                    <div class="right-card">
+                      <div class="card-info">
+                        <span class="_eventTitle">
+                       {{event.title}}
+                        </span>
+                        <div class="_streaming">
+                          Streaming on {{event.streamingOn}}
+                        </div>
+                        <span class="_streaming">
+                            {{event.type}}
+                          </span>
+                          <span class="_streaming">
+                            Rs. {{event.price}} Onwards
+                          </span>
+                      </div>
+                    </div>
+                </div>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+           </div>
+        </div>
+</div>
+</div>

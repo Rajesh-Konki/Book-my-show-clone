@@ -1,0 +1,115 @@
+.filter-section{
+    display: inline-block;
+    background-color: rgb(233, 236, 240);
+    width: 272px;
+    margin-left: 5%;
+    vertical-align: top;
+    margin-top: 1%;
+}
+
+
+.movie-items{
+    
+    display: inline-block;
+    margin-left: 42px;
+    
+}
+
+
+.movie-card{
+    width: 270px;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 20px;
+    box-shadow: none;
+    background-color: white;
+    margin-right: 33px;
+
+}
+ul {
+    list-style-type: none;
+    margin-top: 4px;
+  
+  }
+  .months{
+     height: 40px;
+  }
+  .calender_months{
+      margin:0 -5px 15px;
+  }
+  .calender_years{
+    margin:0 -5px 15px;
+}
+ .month_button{
+     display: inline-block;
+     padding: 5px 15px;
+     margin:0px 5px 5px;
+     border:1px solid #ddd;
+     border-radius: 3px;
+     font-size: 12px;
+     color:#333;
+     cursor: pointer;
+
+
+ }
+.movie-image{
+    height: 25em;
+    width: 100%;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+.social-response{
+    padding:2px 13px 0px 13px;
+    font-size: 14px;
+    color: #333;
+    line-height: 16px;
+    vertical-align: top;
+    background-color: #fff;
+    display: inline-block;
+    
+}
+.likes-info{
+    text-align: center;
+}
+#_like_icon{
+    color:rgb(0, 150, 87);
+    margin-right: 4px;
+}
+
+.left-card{
+    display: inline-block;
+    vertical-align: top;
+    width: 27%;
+}
+.__counts{
+    font-size: 12px;
+    color:#999;
+    line-height: 14px;
+    text-align: center;
+}
+.right-card{
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    display: inline-block;
+    margin-left: 16px;
+}
+.date_lang{
+    font-size: 12px;
+    color: #999;
+    text-transform: capitalize;
+}
+mat-panel-title{
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+}
+mat-expansion-panel{
+    margin-bottom: .5em;
+    margin-left: 18%;
+   
+}

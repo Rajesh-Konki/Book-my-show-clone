@@ -1,0 +1,46 @@
+            <div class="mat-dialog-title">
+                <label>Get Started</label>
+                <button class="close" (click)="onNoClick()">&times;</button>
+            </div>
+            <div class="mat-dialog-content">
+                <div class="social-links">
+                    <div>
+                        <button type="button"  class="link-button" (click)="signInWithFB()">
+                          <div class="social-icon">
+                            <a href="#" class="fa fa-facebook" id="facebook-icon"></a>
+                          </div>
+                          <span class="__text"> Continue with Facebook</span>
+                        </button>
+                    </div>
+                    <div>
+                      <button type="button" class="link-button">
+                        <div class="social-icon">
+                          <a href="#" class="fa fa-google"></a>
+                        </div>
+                        <span class="__text">
+                            Continue with Google
+                        </span>
+                      </button>
+                    </div>
+                    <div>
+                        <button type="button" class="link-button">
+                            <a href="#" class="fa fa-mail"></a><span class="__text">
+                                Continue with Email
+                            </span></button>
+                    </div>
+                    <div>
+                        <label type="text">Or</label>
+                    </div>
+                    <div class="phone-credential">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">+91</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Continue with mobile number">
+                          </div>
+                    </div>
+                    <div class="footer">
+                        I agree to the Terms & Conditions and Privacy Policy
+                    </div>
+                </div>
+            </div>

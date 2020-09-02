@@ -1,0 +1,101 @@
+<mat-toolbar fxLayout="row" >
+    <img src="../../../assets/images/logo.png" class="img-fluid" alt="logo">
+      
+    <div class="_search">
+     <app-movie-search></app-movie-search>
+    </div>
+    <span class="example-spacer"></span>
+    <div fxFlex fxLayout fxLayoutAlign="end">
+        <div  id="navbar-items">
+            <div class="row">
+                <div class="col-md-3 col-sm-4">
+                    <a class="nav-link" href="#">
+                        <span class="bg-transperent dropdown-toggle ">
+                            Cities
+                        </span>
+                    </a>
+
+                </div>
+                <div class="col-md-3 col-sm-4">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#language-select">
+                        <span class="bg-transperent dropdown-toggle ">
+                            Language
+                        </span>
+                    </a>
+
+                </div>
+                <div *ngIf="!alreadySignedIn" class="col-md-3 col-sm-4">
+                    <button mat-stroked-button color="accent" class="sign-in-button" data-toggle="modal" (click)="openDialog()">Sign In</button>
+                    
+                </div>
+                <div class="col-md-3 col-sm-4">
+                    
+                        <button mat-icon-button class="menu-icon" aria-label="Example icon-button with menu icon">
+                            <mat-icon>menu</mat-icon>
+                          </button>
+                  
+                </div>
+               
+            </div>
+       
+         </div>
+    </div>
+ 
+</mat-toolbar>
+
+
+
+<!-- language Modal-->
+
+<div class="modal" id="language-select">
+    <div class="modal-dialog modal-dialog-top">
+        <div class="modal-content">
+           
+            <div class="modal-header justify-content-center">
+                Select Language
+
+            </div>
+            <div class="modal-body">
+               <div class="row justify-content-center">
+                <ul class="nav d-md-flex">
+                    <li data-val="eng" data-name="ఇంగ్లీష్" class="">
+                        <label>English</label>
+                    </li>
+                    <li data-val="hin" data-name="హిందీ">
+                        <label>हिंदी</label>
+                    </li>
+                    <li data-val="mar" data-name="మరాఠీ">
+                        <label>मराठी</label>
+                    </li>
+                   
+                    <li data-val="tam" data-name="తమిళ్">
+                        <label>தமிழ்</label>
+                    </li>
+                    <li data-val="tel" data-name="తెలుగు" >
+                        <label>తెలుగు</label>
+                    </li>
+                    <li data-val="kan" data-name="కన్నడ">
+                        <label>ಕನ್ನಡ</label>
+                    </li>
+                    <li data-val="mal" data-name="మలయాళం">
+                        <label>മലയാളം</label>
+                    </li>
+                  
+                </ul>
+             
+
+               </div>
+               
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+    </div>
+</div>
+

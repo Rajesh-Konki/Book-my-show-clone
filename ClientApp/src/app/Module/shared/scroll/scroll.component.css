@@ -1,0 +1,80 @@
+#demo {
+    margin-top: 1%;
+    height: 21em;
+    
+    width: 100%;
+    -webkit-box-align: center;;
+}
+.carousal{
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    background-color: rgb(233, 236, 240);
+  
+
+}
+
+.carousel-item img{
+    height: 21em;
+   
+}
+.carousel-item .btn{
+    position: absolute;
+    top: 82%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: rgb(243, 49, 49);
+    color: white;
+    font-size: 12px;
+    padding: 6px 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+   
+}
+.carousel-indicators li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 10px;
+    text-indent: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background-color: #6a6a6d;
+       
+}
+.carousel-indicators .active {
+    width: 10px;
+    height: 10px;
+    margin: 10px;
+    background-color: #fff;
+}
+/* 
+.carousel-item:before {
+    position:absolute;
+    top:0;
+    bottom: 0;
+    right: 82%;
+    left: 0;
+    content:"";
+    display:block;
+    background-color: #fff;
+    z-index: 2;
+}
+.carousel-item:after {
+    position:absolute;
+    top:0;
+    bottom:0;
+    right: 0;
+    left: 82%;
+    content:"";
+    display:block;
+    background-color:#fff;
+    z-index: 2;
+}
+.carousel-item .active.left { left: -33%; }
+.carousel-item .next        { left:  33%; }
+.carousel-item .prev        { left: -33%; } */

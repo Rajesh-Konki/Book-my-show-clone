@@ -1,0 +1,96 @@
+<div class="movie-list-module">
+  <div class="row">
+    <section  class="col-sm-3">
+      <div class="filter-section">
+        <mat-expansion-panel class="mat-elevation-z0" (opened)="languageFilterPanelOpenState = true" 
+                (closed)="languageFilterPanelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title [style.color]="languageFilterPanelOpenState?'#0078ff':'black'">
+              Select Language
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <span class="filter-list-section">
+            <ul id="filte-item">
+              <li *ngFor="let language of languages ">
+                <mat-checkbox color="primary" [(ngModel)]="language.selected" [checked]="language.selected"
+                  (change)="filterByLanguage($event,language.language)">
+                  {{language.language}}
+                </mat-checkbox>
+              </li>
+            </ul>
+          </span>
+        </mat-expansion-panel>
+        <mat-expansion-panel class="mat-elevation-z0" (opened)="genreFilterPanelOpenState = true" (closed)="genreFilterPanelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title [style.color]="genreFilterPanelOpenState?'#0078ff':'black'">
+              Genre
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <span class="filter-list-section">
+            <ul id="filter-item">
+              <li *ngFor="let genreItme of genre">
+                <mat-checkbox color="primary" [checked]="genreItme.selected"
+                  (change)="filterByGenre($event,genreItme.language)">
+                  {{genreItme.language}}
+                </mat-checkbox>
+              </li>
+            </ul>
+          </span>
+        </mat-expansion-panel>
+      </div>
+  </section>
+  <div class="col-sm-9">
+    <div class="calender_years">
+      <div class="row">
+          <div *ngFor="let year of yearIndex; let i = index">
+            <button class="month_button" [ngStyle]="{'color': '#333'  } " (click)="getYearCards(i)">
+              {{calYear+year}}
+            </button>
+          </div>
+        </div>
+      </div>
+    <div class="calender_months">
+    <div class="row">
+        <div *ngFor="let month of months; let i = index">
+          <button class="month_button" [ngStyle]="{'color':i >  nowMonthIndex ? '#333' : '#d2d2d2' } ">
+            {{month}}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div *ngFor="let movie of filteredMovies;" >  
+        <div class="movie-card">
+        <mat-card class="mat-elevation-z0"  (click)="navigate(movie)" >
+          <img mat-card-image class="movie-image" src="{{movie.image}}" alt="Photo of a Movie">
+          <mat-card-footer>
+            <div class="card-info">
+              <div class="left-card">
+                <div class="likes-info">
+                  <div class="social-response">
+                    <i class="fa fa-thumbs-up" aria-hidden="true" id="_like_icon"></i>{{movie.likesCount}}
+                  </div>
+                  <div class="__counts">
+                    Votes
+                  </div>
+                </div>
+              </div>
+              <div class="right-card">
+                <div class="movie-info">
+                  <div class="{{movie.title}}">
+                   {{movie.title}}
+                  </div>
+                  <div class="date_lang">
+                    {{movie.date|date: "mediumDate"}} | {{movie.language}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>

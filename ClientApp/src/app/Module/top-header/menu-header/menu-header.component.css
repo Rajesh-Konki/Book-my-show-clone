@@ -1,0 +1,13 @@
+.animate{
+    position: relative;
+    padding-top: 0em;
+}
+
+.navbar{
+    background: #1f2533;
+    
+}
+.nav-item:active{
+    color: white;
+
+}
